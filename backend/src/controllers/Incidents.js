@@ -42,23 +42,6 @@ module.exports = {
     return response.json({ id })
   },
 
-  async update(request, response) {
-    const ong_id = request.headers.authorization
-    const { id, title, description, value } = request.body
-
-    if (!ong_id) return response.send({ msg: 'User unauthorized' })
-
-    if (!id) return response.send({ msg: 'Incident not found' })
-
-    await connection('incidents').where('id', id).update({
-      title,
-      description,
-      value
-    })
-
-    return response.json({ title, description, value })
-  },
-
   async delete(request, response) {
     const ong_id = request.headers.authorization
     const { id } = request.params

@@ -11,7 +11,6 @@ routes.post('/ongs', Ongs.create)
 
 routes.get('/incidents', Incidents.index)
 routes.post('/incidents', Incidents.create)
-routes.put('/incidents', Incidents.update)
 routes.delete('/incidents/:id', Incidents.delete)
 
 routes.get('/profile', Profile.index)
